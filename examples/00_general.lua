@@ -9,6 +9,14 @@ Try this file with the following commands lines;
 
 local cli = require "cliargs"
 
+local function print_version(key, value, altkey)
+  -- this is called when the flag -v or --version is set
+  if key == 'version' then
+    print("cli_example.lua: version 1.2.1")
+    os.exit(0)
+  end
+end
+
 cli:set_name("cli_example.lua")
 
 -- Required arguments:
@@ -26,27 +34,22 @@ cli:set_name("cli_example.lua")
 -- Flags: a flag is a boolean option. Defaults to false
   -- A flag with short-key notation only
   cli:add_flag("-d", "script will run in DEBUG mode")
-  -- A flag with both the short-key and --expanded-key notations
-  cli:add_flag("-v, --version", "prints the program's version and exits")
+  -- A flag with both the short-key and --expanded-key notations, and callback function
+  cli:add_flag("-v, --version", "prints the program's version and exits", print_version)
   -- A flag with --expanded-key notation only
   cli:add_flag("--verbose", "the script output will be very verbose")
 
 -- Parses from _G['arg']
-local args = cli:parse_args()
+local args = cli:parse(arg)
 
 if not args then
   -- something wrong happened and an error was printed
-  return
+  os.exit(1)
 end
 
 -- argument parsing was successful, arguments can be found in `args`
 -- upon successful parsing cliargs will delete itslef to free resources
 -- for k,item in pairs(args) do print(k .. " => " .. tostring(item)) end
-
--- checking for flags: is -v or --version set?
-if args["v"] then
-  return print("cli_example.lua: version 1.2.1")
-end
 
 print("Input file: " .. args["INPUT"])
 print("Output file: " .. args["o"])

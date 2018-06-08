@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# Run busted and collect spec coverage using LuaCov.
+# Output will be found at /luacov.report.out.
+#
+# Usage:
+#
+#   $ ./bin/coverage
+#   $ cat luacov.report.out
+
+busted -c
+luacov src/cliargs.lua
+rm luacov.stats.out
+grep -zPo "(?s)={10,}\nSummary\n={10,}.+" luacov.report.out
