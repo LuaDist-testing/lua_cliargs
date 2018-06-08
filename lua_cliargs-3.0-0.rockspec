@@ -1,16 +1,16 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "lua_cliargs"
-version = "3.0.rc-1"
+version = "3.0-0"
 -- LuaDist source
 source = {
-  tag = "3.0.rc-1",
+  tag = "3.0-0",
   url = "git://github.com/LuaDist-testing/lua_cliargs.git"
 }
 -- Original source
 -- source = {
---    url = "git://github.com/amireh/lua_cliargs.git",
---    branch = "3.0"
+--    url = "https://github.com/amireh/lua_cliargs/archive/v3.0-0.tar.gz",
+--    dir = "lua_cliargs-3.0-0"
 -- }
 description = {
    summary = "A command-line argument parser.",
@@ -30,13 +30,18 @@ build = {
    type = "builtin",
    modules = {
       ["cliargs"] = "src/cliargs.lua",
+      ["cliargs.config_loader"] = "src/cliargs/config_loader.lua",
+      ["cliargs.constants"] = "src/cliargs/constants.lua",
       ["cliargs.core"] = "src/cliargs/core.lua",
+      ["cliargs.parser"] = "src/cliargs/parser.lua",
       ["cliargs.printer"] = "src/cliargs/printer.lua",
       ["cliargs.utils.disect"] = "src/cliargs/utils/disect.lua",
       ["cliargs.utils.disect_argument"] = "src/cliargs/utils/disect_argument.lua",
+      ["cliargs.utils.filter"] = "src/cliargs/utils/filter.lua",
       ["cliargs.utils.lookup"] = "src/cliargs/utils/lookup.lua",
       ["cliargs.utils.shallow_copy"] = "src/cliargs/utils/shallow_copy.lua",
       ["cliargs.utils.split"] = "src/cliargs/utils/split.lua",
+      ["cliargs.utils.trim"] = "src/cliargs/utils/trim.lua",
       ["cliargs.utils.wordwrap"] = "src/cliargs/utils/wordwrap.lua",
    }
 }
