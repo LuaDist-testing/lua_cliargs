@@ -613,7 +613,7 @@ function cli:print_help(noprint)
   end
 
   if self.optargument.maxcount > 0 then
-    append(self.optargument.key, self.optargument.desc .. " (optional, default: " .. self.optargument.default .. ")")
+    append(self.optargument.key, self.optargument.desc .. " (optional, default: " .. tostring(self.optargument.default) .. ")")
   end
 
   if #self.optional > 0 then
@@ -650,7 +650,7 @@ end
 cli._COPYRIGHT   = "Copyright (C) 2011-2014 Ahmad Amireh"
 cli._LICENSE     = "The code is released under the MIT terms. Feel free to use it in both open and closed software as you please."
 cli._DESCRIPTION = "Commandline argument parser for Lua"
-cli._VERSION     = "cliargs 2.5-4"
+cli._VERSION     = "cliargs 2.5-5"
 
 -- aliases
 cli.add_argument = cli.add_arg
