@@ -1,15 +1,15 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = "lua_cliargs"
-version = "2.0-1"
+version = "2.1-1"
 -- LuaDist source
 source = {
-  tag = "2.0-1",
+  tag = "2.1-1",
   url = "git://github.com/LuaDist-testing/lua_cliargs.git"
 }
 -- Original source
 -- source = {
---    url = "https://github.com/downloads/amireh/lua_cliargs/lua_cliargs-2.0.tar.gz"
+--    url = "https://github.com/downloads/amireh/lua_cliargs/lua_cliargs-2.1.tar.gz"
 -- }
 description = {
    summary = "A command-line argument parser.",
