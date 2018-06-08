@@ -1,8 +1,16 @@
+-- This file was automatically generated for the LuaDist project.
+
 package = "lua_cliargs"
-version = "1.1-0"
+version = "2.0-1"
+-- LuaDist source
 source = {
-   url = "https://github.com/downloads/amireh/lua_cliargs/lua_cliargs-1.1.tar.gz"
+  tag = "2.0-1",
+  url = "git://github.com/LuaDist-testing/lua_cliargs.git"
 }
+-- Original source
+-- source = {
+--    url = "https://github.com/downloads/amireh/lua_cliargs/lua_cliargs-2.0.tar.gz"
+-- }
 description = {
    summary = "A command-line argument parser.",
    detailed = [[
@@ -12,16 +20,14 @@ description = {
       cliargs allows you to define required, optional, and flag arguments.
    ]],
    homepage = "https://github.com/amireh/lua_cliargs",
-   license = "MIT/X11" -- or whatever you like
+   license = "MIT <http://opensource.org/licenses/MIT>"
 }
 dependencies = {
    "lua >= 5.1"
-   -- If you depend on other rocks, add them here
 }
 build = {
-   -- We'll start here.
    type = "builtin",
    modules = {
-      cliargs = "cliargs.lua"
+      cliargs = "src/cliargs.lua"
    }
 }
